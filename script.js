@@ -18,6 +18,7 @@ menuToggle?.addEventListener('click', () => {
   mobileMenu.classList.toggle('open', open);
   menuToggle.classList.toggle('active', open);
   menuToggle.setAttribute('aria-expanded', String(open));
+  menuToggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
   document.body.classList.toggle('menu-open', open);
 });
 
@@ -26,6 +27,7 @@ document.querySelectorAll('.mobile-menu a').forEach(link => {
     mobileMenu.classList.remove('open');
     menuToggle.classList.remove('active');
     menuToggle.setAttribute('aria-expanded','false');
+    menuToggle.setAttribute('aria-label','Abrir menu');
     document.body.classList.remove('menu-open');
   });
 });
